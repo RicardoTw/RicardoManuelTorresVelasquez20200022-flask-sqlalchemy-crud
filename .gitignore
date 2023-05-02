@@ -4,6 +4,9 @@ __pycache__
 static/css/bootstrap.min.css
 
 .env
+
 docker-compose
+
 Dockerfile
+
 README1
