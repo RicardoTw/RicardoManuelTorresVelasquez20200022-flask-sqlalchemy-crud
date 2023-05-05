@@ -5,13 +5,13 @@ from config import DATABASE_CONNECTION_URI
 
 app = Flask(__name__)
 
-# settings
+# CODNFIGURACION DE OPCIONES
 app.secret_key = 'mysecret'
 print(DATABASE_CONNECTION_URI)
 app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_CONNECTION_URI
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
-# no cache
+# Configura la aplicación Flask para utilizar la biblioteca SQLAlchemy
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
 SQLAlchemy(app)

@@ -1,6 +1,6 @@
 from utils.db import db
 
-
+# Representa una tabla en una base de datos que almacena información de contacto
 class Contact(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     fullname = db.Column(db.String(100))

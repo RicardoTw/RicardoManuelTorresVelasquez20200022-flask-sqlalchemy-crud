@@ -15,15 +15,15 @@ def index():
 def add_contact():
     if request.method == 'POST':
 
-        # receive data from the form
+        # Recibir datos del formulario
         fullname = request.form['fullname']
         email = request.form['email']
         phone = request.form['phone']
 
-        # create a new Contact object
+        # Crear un nuevo objeto Contacto
         new_contact = Contact(fullname, email, phone)
 
-        # save the object into the database
+        # Guardar el objeto en la base de datos
         db.session.add(new_contact)
         db.session.commit()
 
@@ -34,7 +34,7 @@ def add_contact():
 
 @contacts.route("/update/<string:id>", methods=["GET", "POST"])
 def update(id):
-    # get contact by Id
+    # Obtener contacto por Id
     print(id)
     contact = Contact.query.get(id)
 
@@ -51,7 +51,7 @@ def update(id):
 
     return render_template("update.html", contact=contact)
 
-
+#Define una ruta para eliminar un registro de contacto en la base de datos a través de una solicitud GET.
 @contacts.route("/delete/<id>", methods=["GET"])
 def delete(id):
     contact = Contact.query.get(id)
